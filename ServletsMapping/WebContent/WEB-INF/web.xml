@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	version="4.0">
+	<display-name>ServletsMapping</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>HelloServlet</servlet-name>
+		<servlet-class>com.servlets.MyServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>HelloServlet</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>InitParam</servlet-name>
+		<servlet-class>com.servlets.InitServlet</servlet-class>
+		<init-param>
+			<param-name>userName</param-name>
+			<param-value>Jon Curver</param-value>
+		</init-param>
+		<init-param>
+			<param-name>age</param-name>
+			<param-value>22</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>country</param-name>
+			<param-value>Ukraine</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>InitParam</servlet-name>
+		<url-pattern>/init</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>initJSP</servlet-name>
+		<servlet-class>/init.jsp</servlet-class>
+		<init-param>
+		<param-name>message</param-name>
+		<param-value>Hello message</param-value>
+		</init-param>
+	</servlet>
+	
+	<servlet-mapping>
+	<servlet-name>initJSP</servlet-name>
+	<url-pattern>/initJSP</url-pattern>
+	</servlet-mapping>
+</web-app>
